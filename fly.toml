@@ -1,0 +1,10 @@
+app = "telegram-bomond"
+primary_region = "ams"
+
+[build]
+
+[env]
+PYTHONIOENCODING = "UTF-8"
+
+# Worker-приложение: без публичных сервисов/портов
+
