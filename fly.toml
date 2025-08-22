@@ -1,0 +1,24 @@
+app = ""
+primary_region = "ams"
+
+[build]
+
+[env]
+PYTHONIOENCODING = "UTF-8"
+
+[[services]]
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  [services.concurrency]
+    hard_limit = 1
+    soft_limit = 1
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
